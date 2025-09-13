@@ -10,6 +10,7 @@ import Root from './assets/Components/Root/Root.jsx';
 import ErrorPage from './assets/Components/ErrorPage/ErrorPage.jsx';
 import Home from './assets/Components/Home/Home.jsx';
 import BookDetail from './assets/Components/BookDetail/BookDetail.jsx';
+import ListedBookItem from './assets/Components/ListedBookItems/ListedBookItem.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element:<Home></Home>
+      },
+      {
+        path: '/listedBook',
+        element: <ListedBookItem></ListedBookItem>
       },
       {
         path: 'book/:bookId',

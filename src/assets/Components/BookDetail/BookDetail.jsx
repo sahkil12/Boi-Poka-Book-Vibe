@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addStoredReadList } from "../MyDataBase/addToDataBase";
+import { addStoredWishList } from "../MyDataBase/addWishListToDB";
 
 const BookDetail = () => {
     const {bookId} = useParams();
@@ -6,9 +8,18 @@ const BookDetail = () => {
     const data = useLoaderData()
 
     const book = data.find(book => book.bookId === id);
-    console.log(book);
+    console.log('all books',data);
+    console.log('book',book);
 
     const {image, author, bookName, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
+
+    const handleMarkAsRead = (id) =>{
+        addStoredReadList(id)
+    }
+
+    const handleAddWishList = (id) =>{
+        addStoredWishList(id)
+    }
 
     return (
         // card //
@@ -48,7 +59,7 @@ const BookDetail = () => {
       {/* details book */}
       <div className="space-y-3">
         <h2 className="font-semibold flex justify-between w-[40%] text-gray-500">Number of Pages: <p className="font-bold text-black">{totalPages}</p></h2>
-        <h2 className="font-semibold flex text-center justify-between w-[60%] text-gray-500">Publisher:
+        <h2 className="font-semibold flex text-center justify-between w-[50%] text-gray-500">Publisher:
              <p className="font-bold text-black">{publisher}</p></h2>
         <h2 className="font-semibold flex justify-between w-[40%] text-gray-500">Year of Publishing: <p className="font-bold text-black">{yearOfPublishing}</p></h2>
         <h2 className="font-semibold flex justify-between w-[40%] text-gray-500">Rating:
@@ -56,8 +67,12 @@ const BookDetail = () => {
       </div>
                     {/* button */}
                 <div className="flex gap-5 mt-7">
-                    <button className="border border-gray-400 rounded-md py-3 px-6 font-bold">Read</button>
-                    <button className="text-white rounded-md py-3 px-6 font-bold bg-[#59C6D2]">Wishlist</button>
+                    <button
+                    onClick={()=> handleMarkAsRead(bookId)}
+                     className="border-2 border-gray-400 rounded-md py-3 px-6 font-bold">Mark As Read</button>
+                    <button
+                    onClick={()=> handleAddWishList(bookId)}
+                    className="text-white rounded-md py-3 px-6 font-bold bg-[#59C6D2]">Add To Wishlist</button>
                 </div>
     </div>
   </div>
