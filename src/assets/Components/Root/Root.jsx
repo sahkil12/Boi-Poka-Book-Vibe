@@ -4,9 +4,13 @@ import Navbar from "../Navbar/Navbar";
 
 const Root = () => {
     return (
-        <div className="container mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+        <div className="">
+            <div className="container  mx-auto">
+                <Navbar></Navbar>
+            </div>
+            <div className="container  mx-auto">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

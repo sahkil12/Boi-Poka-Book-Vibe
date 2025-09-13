@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Book = ({ book }) => {
-  const { bookName, author, image, tags, rating, category } = book;
+  const { bookId ,bookName, author, image, tags, rating, category } = book;
 
   return (
-    <div className="card shadow-sm p-6 border border-gray-200">
-      <figure className="bg-gray-200 py-10 rounded-xl">
+   <Link to={`book/${bookId}`}>
+    <div className="card shadow-lg p-6 border border-gray-200">
+      <figure className="bg-gray-100 py-10 rounded-xl">
         <img
           src={image}
           className="object-cover w-fit h-[250px] shadow-2xl"
@@ -12,8 +15,8 @@ const Book = ({ book }) => {
       </figure>
       <div className="space-y-3 mt-5">
         <div className="flex gap-7 my-5">
-          {tags.map((tag) => (
-            <button className=" py-2 px-7 rounded-full font-medium text-green-500 border-none bg-green-50">
+          {tags.map((tag, ind) => (
+            <button key={ind} className=" py-2 px-7 rounded-full font-medium text-green-500 border-none bg-green-50">
               {tag}
             </button>
           ))}
@@ -46,6 +49,8 @@ const Book = ({ book }) => {
         </div>
       </div>
     </div>
+   </Link>
+
   );
 };
 
