@@ -3,15 +3,17 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const links = (
     <>
-      <li >
+     <nav className="nav-bar flex gap-10">
+       <li >
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
         <NavLink to={"/listedBook"}>Listed Books</NavLink> 
       </li>
       <li>
-        <NavLink to={""}>Pages to Read</NavLink>
+        <NavLink to={'/pageChart'}>Pages to Read</NavLink>
       </li>
+     </nav>
     </>
   );
   return (
@@ -45,7 +47,7 @@ const Navbar = () => {
         <a className="font-bold text-3xl">Boi Poka</a>
       </div>
       <div className="navbar-center hidden lg:flex ">
-        <ul className="menu menu-horizontal px-1 text-lg font-semibold lg:gap-9">
+        <ul className="px-1 text-lg font-semibold lg:gap-9">
         {links}
         </ul>
       </div>
