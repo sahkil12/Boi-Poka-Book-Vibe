@@ -56,6 +56,7 @@ const ListedBookItem = () => {
         <TabPanel>
           {/* read list tabs */}
           <div className="my-10">
+            {readList.length === 0 && <h2 className="md:w-2/5 mx-auto text-4xl/normal md:text-6xl/normal font-bold text-center my-40">You haven’t added any books to your Read list yet.</h2>}
             {readList?.map((book) => (
               <ReadBookItem key={book.bookId} book={book}></ReadBookItem>
             ))}
@@ -64,6 +65,9 @@ const ListedBookItem = () => {
         <TabPanel>
           {/* wish list tab */}
         <div className="my-10">
+          {
+            wishList.length === 0 && <h2 className="md:w-2/5 mx-auto text-4xl/normal md:text-6xl/normal font-bold text-center my-40">You haven’t added any books to your Wish list yet.</h2>
+          }
           {
             wishList?.map((book)=>
                <WishListItems key={book.bookId} book={book}></WishListItems> )
