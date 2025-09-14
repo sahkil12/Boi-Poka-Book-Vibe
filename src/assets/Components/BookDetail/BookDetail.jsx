@@ -8,8 +8,6 @@ const BookDetail = () => {
     const data = useLoaderData()
 
     const book = data.find(book => book.bookId === id);
-    console.log('all books',data);
-    console.log('book',book);
 
     const {image, author, bookName, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
 
