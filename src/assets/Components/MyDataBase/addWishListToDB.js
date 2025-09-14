@@ -13,7 +13,6 @@ const addStoredWishList = (id) =>{
     const storedWishList = getStoredWishList();
     if(storedWishList.includes(id)){
         alert("This Wish List Item Already In Exist!")
-        return;
     }
     else{
         storedWishList.push(id);

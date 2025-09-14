@@ -1,5 +1,5 @@
 const getStoredReadList = ()=>{
-    const storedListStr = localStorage.getItem('read-item');
+    const storedListStr = localStorage.getItem('read-item') || [];
     if(storedListStr){
         const storedList = JSON.parse(storedListStr);
         return storedList;
@@ -12,7 +12,6 @@ const addStoredReadList = (id)=>{
     const storedList = getStoredReadList();
     if(storedList.includes(id)){
         alert("Already Exist In List!")
-        return;
     }
     else{
         storedList.push(id);
@@ -21,4 +20,4 @@ const addStoredReadList = (id)=>{
     }
 }
 
-export { addStoredReadList }
+export { addStoredReadList , getStoredReadList}
