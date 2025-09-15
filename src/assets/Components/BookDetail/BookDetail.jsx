@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { addStoredReadList } from "../MyDataBase/addToDataBase";
 import { addStoredWishList } from "../MyDataBase/addWishListToDB";
+import { Helmet } from "react-helmet";
 
 const BookDetail = () => {
     const {bookId} = useParams();
@@ -23,6 +24,10 @@ const BookDetail = () => {
     return (
         // card //
        <div className="w-full my-10 py-5">
+        <Helmet>
+          <title>Book Details For {bookName}</title>
+        </Helmet>
+
   <div className="flex gap-7 p-2 flex-col lg:flex-row rounded-xl">
     {/* image */}
    <div className="flex-1 p-5 flex justify-center items-center bg-gray-100 rounded-xl">

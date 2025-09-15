@@ -53,7 +53,7 @@ const ReadBookItem = ({ book }) => {
         <div className="flex gap-7 items-center">
           <h3 className="rounded-full bg-blue-100 text-blue-500 font-medium py-2 text-lg px-7">Category : {category}</h3>
           <h3 className="rounded-full bg-orange-100 text-orange-500 font-medium py-2 text-lg px-7">Ratting : {rating}</h3>
-          <button className="rounded-full btn bg-green-500 border-none px-7 py-6 text-lg">View Details</button>
+          <button className="rounded-full btn text-white bg-green-500 border-none px-7 py-6 text-lg">View Details</button>
         </div>
       </div>
     </div>

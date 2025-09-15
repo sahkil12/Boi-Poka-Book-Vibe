@@ -6,6 +6,7 @@ import { getStoredReadList } from "../MyDataBase/addToDataBase";
 import ReadBookItem from "../ReadBookItem/ReadBookItem";
 import { getStoredWishList } from "../MyDataBase/addWishListToDB";
 import WishListItems from "../WishListItems/WishListItems";
+import { Helmet } from "react-helmet";
 
 const ListedBookItem = () => {
   const [readList, setReadList] = useState([]);
@@ -33,18 +34,21 @@ const ListedBookItem = () => {
     }, []);
   return (
     <div>
+      <Helmet>
+          <title>Boi Poka | Listed Book Item</title>
+        </Helmet>
       {/* heading text part */}
       <div className="text-center work-sans">
         <h2 className="text-4xl font-bold my-10">Books</h2>
-        <select
-          defaultValue="Pick a text editor"
-          className=" my-10 select select-primary bg-green-500 text-white font-bold text-lg border-none outline-none rounded-md "
-        >
-          <option disabled={true}>Sort By</option>
-          <option>Rating</option>
-          <option>Number of pages</option>
-          <option>Publisher year</option>
-        </select>
+{/* sort by */}
+        <div className="dropdown dropdown-center  my-10 mb-15">
+  <div tabIndex={0} role="button" className="btn w-60 flex justify-between bg-green-500 text-white text-lg">Sort By<span>⬇</span></div>
+  <ul tabIndex={0} className="dropdown-content bg-green-400 menu text-white  font-medium text-lg rounded-box z-1 w-56 p-2 shadow-sm">
+    <li><a>Rating</a></li>
+    <li><a>Number of pages</a></li>
+    <li><a>Publisher year</a></li>
+  </ul>
+</div>
       </div>
       {/* tabs */}
       <Tabs>

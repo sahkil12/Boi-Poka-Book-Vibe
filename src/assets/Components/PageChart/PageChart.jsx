@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 
@@ -32,10 +33,13 @@ const PageChart = () => {
   const allData = useLoaderData([]);
   return (
     <div className="my-25">
+      <Helmet>
+        <title>Boi Poka | Page Chart</title>
+      </Helmet>
       <h2 className="text-center mb-20 mt-5 text-5xl font-bold">Page Chart</h2>
 
       <div className="flex justify-center">
-        <BarChart width={850} height={450} data={allData}>
+        <BarChart width={950} height={450} data={allData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
            dataKey="bookName"
