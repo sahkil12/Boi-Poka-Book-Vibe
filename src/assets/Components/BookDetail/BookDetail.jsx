@@ -9,14 +9,12 @@ const BookDetail = () => {
     const data = useLoaderData()
 
     const book = data.find(book => book.bookId === id)
-    
 
     const {image, author, bookName, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
 
     const handleMarkAsRead = (id) =>{
         addStoredReadList(id)
     }
-
     const handleAddWishList = (id) =>{
         addStoredWishList(id)
     }
