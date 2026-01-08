@@ -22,13 +22,13 @@ const Navbar = () => {
     <>
       <nav className="nav-bar flex gap-10">
         <li>
-          <NavLink to={"/"}>Home</NavLink>
+          <NavLink className={({isActive})=> isActive? 'text-green-500 font-bold border-b-2' : ''} to={"/"}>Home</NavLink>
         </li>
         <li>
-          <NavLink to={"/listedBook"}>Listed Books</NavLink>
+          <NavLink className={({isActive})=> isActive? 'text-green-500 font-bold border-b-2' : ''} to={"/listedBook"}>Listed Books</NavLink>
         </li>
         <li>
-          <NavLink to={"/pageChart"}>Pages to Read</NavLink>
+          <NavLink className={({isActive})=> isActive? 'text-green-500 font-bold border-b-2' : ''} to={"/pageChart"}>Pages to Read</NavLink>
         </li>
       </nav>
     </>
