@@ -4,7 +4,7 @@ import Books from "../Books/Books";
 
 const Home = () => {
     return (
-        <div className="my-16 text-center">
+        <div className="my-10 text-center">
             <Helmet>
                 <title>Boi Poka | Home </title>
             </Helmet>

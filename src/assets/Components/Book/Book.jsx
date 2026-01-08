@@ -5,18 +5,18 @@ const Book = ({ book }) => {
 
   return (
    <Link to={`book/${bookId}`}>
-    <div className="card shadow-lg p-6 border border-gray-200 hover:shadow-2xl">
-      <figure className="bg-gray-100 py-10 rounded-xl">
+    <div className="card shadow-lg p-3 md:p-5 border border-gray-300/70 hover:shadow-2xl ">
+      <figure className="bg-gray-200/70 py-10 rounded-xl">
         <img
           src={image}
           className="object-cover w-fit h-[250px] shadow-2xl"
           alt={bookName}
         />
       </figure>
-      <div className="space-y-3 mt-5">
-        <div className="flex gap-7 my-5">
+      <div className="space-y-3 mt-4">
+        <div className="flex gap-4 my-5 flex-wrap">
           {tags.map((tag, ind) => (
-            <button key={ind} className=" py-2 px-7 rounded-full font-medium text-green-500 border-none bg-green-50">
+            <button key={ind} className="py-2 px-6 text-sm md:text-base rounded-full font-medium text-green-500 border-none bg-green-100">
               {tag}
             </button>
           ))}
