@@ -8,7 +8,6 @@ const Home = () => {
             <Helmet>
                 <title>Boi Poka | Home </title>
             </Helmet>
-
             <Banner></Banner>
             <Books></Books>
 

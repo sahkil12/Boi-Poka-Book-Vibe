@@ -20,7 +20,7 @@ const Navbar = () => {
 
   const links = (
     <>
-      <nav className="nav-bar flex gap-10">
+     
         <li>
           <NavLink className={({isActive})=> isActive? 'text-green-500 font-bold border-b-2' : ''} to={"/"}>Home</NavLink>
         </li>
@@ -30,11 +30,11 @@ const Navbar = () => {
         <li>
           <NavLink className={({isActive})=> isActive? 'text-green-500 font-bold border-b-2' : ''} to={"/pageChart"}>Pages to Read</NavLink>
         </li>
-      </nav>
+      
     </>
   );
   return (
-    <div className="navbar text-black shadow-sm py-10 lg:px-30 work-sans ">
+    <div className="navbar border w-full text-black shadow-md py-7 lg:px-30 work-sans">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,7 +56,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content  bg-white rounded-box z-1 mt-3 w-52 p-2 shadow text-lg font-semibold"
+            className="menu menu-sm dropdown-content  bg-white rounded-box z-1 mt-3 w-52 p-2 shadow text-lg font-semibold gap-5"
           >
             {links}
           </ul>
@@ -66,13 +66,13 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex ">
-        <ul className="px-1 text-lg font-semibold lg:gap-9">{links}</ul>
+        <ul className="px-1 text-lg font-semibold lg:gap-9 flex flex-row">{links}</ul>
       </div>
       <div className="navbar-end gap-3 lg:gap-6 text-lg font-semibold">
         <a className="btn border-none text-white text-base bg-green-500 px-6">
           Sign In{" "}
         </a>
-        <a className="btn border-none text-white text-base bg-[#59C6D2] px-6">
+        <a className="btn hidden xl:flex border-none text-white text-base bg-[#59C6D2] px-6">
           Sign Up
         </a>
 

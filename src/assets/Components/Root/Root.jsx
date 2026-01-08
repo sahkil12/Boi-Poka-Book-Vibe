@@ -5,10 +5,10 @@ import Navbar from "../Navbar/Navbar";
 const Root = () => {
     return (
         <div className="">
-            <div className="mx-auto sticky top-0 z-50 bg-white">
+            <header className="mx-auto sticky top-0 z-50 bg-white">
                 <Navbar></Navbar>
-            </div>
-            <div className="container mx-auto">
+            </header>
+            <div className="container mx-auto p-1">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
