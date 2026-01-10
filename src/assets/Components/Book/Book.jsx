@@ -1,56 +1,68 @@
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-  const { bookId ,bookName, author, image, tags, rating, category } = book;
+  const { bookId, bookName, author, image, tags, rating, category } = book;
 
   return (
-   <Link to={`book/${bookId}`}>
-    <div className="card shadow-lg p-3 md:p-5 border border-gray-300/70 hover:shadow-2xl ">
-      <figure className="bg-gray-200/70 py-10 rounded-xl">
-        <img
-          src={image}
-          className="object-cover w-fit h-[250px] shadow-2xl"
-          alt={bookName}
-        />
-      </figure>
-      <div className="space-y-3 mt-4">
-        <div className="flex gap-4 my-5 flex-wrap">
-          {tags.map((tag, ind) => (
-            <button key={ind} className="py-2 px-6 text-sm md:text-base rounded-full font-medium text-green-500 border-none bg-green-100">
-              {tag}
-            </button>
-          ))}
-        </div>
-        <h2 className="card-title text-2xl Playfair">{bookName}</h2>
-        <p className="text-start font-medium text-neutral-600">By : {author}</p>
-        {/* divider */}
-        <div className="border-b border-dashed my-5 border-neutral-300 w-[95%] mx-auto"></div>
-        <div className="card-actions justify-between">
-          <div className="text-neutral-600 font-semibold">{category}</div>
-          {/* ratting */}
-          <div className="flex gap-3 text-neutral-600 items-center">
-            <h2 className="font-semibold text-xl">{rating}</h2>
-            <div className="rating gap-1 ">
-              <input
-                type="radio"
-                name="rating-4"
-                className="mask mask-star-2 bg-green-500"
-                aria-label="1 star"
-              />
-              <input
-                type="radio"
-                name="rating-4"
-                className="mask mask-star-2 bg-green-500"
-                aria-label="2 star"
-                defaultChecked
-              />
+    <Link to={`book/${bookId}`} className="group">
+      <div className="card h-full bg-base-100 border border-gray-200 rounded-2xl p-4 md:p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+        {/* Image */}
+        <figure className="bg-gray-200/60 rounded-xl py-8 overflow-hidden">
+          <img
+            src={image}
+            alt={bookName}
+            className="h-[260px] mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+        </figure>
+        {/* Content */}
+        <div className="mt-5 space-y-3">
+          {/* Tags */}
+          <div className="flex gap-2 flex-wrap">
+            {tags.map((tag, ind) => (
+              <span
+                key={ind}
+                className="px-4 py-1 text-sm rounded-full bg-green-100/60 text-green-600 font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          {/* Title */}
+          <h2 className="text-xl md:text-2xl font-bold Playfair leading-snug line-clamp-2">
+            {bookName}
+          </h2>
+          {/* Author */}
+          <p className="text-neutral-500 text-sm md:text-base">
+            By {author}
+          </p>
+          {/* Divider */}
+          <div className="border-t border-dashed border-gray-300 my-4"></div>
+          {/* Bottom */}
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-semibold text-neutral-600">
+              {category}
+            </span>
+
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-neutral-700">
+                {rating}
+              </span>
+              <div className="rating rating-sm gap-1">
+                <input
+                  type="radio"
+                  className="mask mask-star-2 bg-green-500"
+                  defaultChecked
+                />
+                <input
+                  type="radio"
+                  className="mask mask-star-2 bg-green-500"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-   </Link>
-
+    </Link>
   );
 };
 
