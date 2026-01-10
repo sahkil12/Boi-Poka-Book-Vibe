@@ -17,15 +17,15 @@ const Banner = () => {
 
         {/* Text Content */}
         <div className="text-start space-y-6 max-w-xl">
-          <p className="text-green-600 font-semibold tracking-wide work-sans">
+          <p className="text-green-600 font-medium tracking-wide work-sans">
             Discover Your Next Read
           </p>
 
-          <h1 className="text-4xl lg:text-6xl font-bold Playfair leading-tight">
+          <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-black/90">
             Books that freshen up your bookshelf
           </h1>
 
-          <p className="text-gray-600 text-lg work-sans">
+          <p className="text-gray-600 text-lg">
             Explore a wide collection of books that inspire, educate, and
             entertain. Find your perfect book today.
           </p>
