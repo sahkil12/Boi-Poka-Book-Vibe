@@ -39,14 +39,13 @@ const PageChart = () => {
   const allData = useLoaderData([]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
+    <div className="max-w-7xl mx-auto px-4 py-12">
       <Helmet>
         <title>Boi Poka | Page Chart</title>
       </Helmet>
-
       {/* Header */}
-      <div className="text-center mb-14">
-        <h2 className="text-4xl md:text-5xl font-bold pop mb-5">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold pop mb-6">
           Reading Progress Overview
         </h2>
         <p className="text-neutral-600 max-w-2xl mx-auto">
@@ -54,7 +53,6 @@ const PageChart = () => {
           listed. It helps you understand reading volume at a glance.
         </p>
       </div>
-
       {/* Chart Card */}
       <div className="bg-base-100 rounded-2xl shadow-md p-6 md:p-10">
         <div className="w-full h-[500px]">
