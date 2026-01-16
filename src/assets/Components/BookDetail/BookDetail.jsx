@@ -19,7 +19,6 @@ const BookDetail = () => {
   const handleAddWishList = (id) => {
     addStoredWishList(id)
   }
-
   return (
     // card //
     <div className=" w-full my-8 py-5">
@@ -51,7 +50,7 @@ const BookDetail = () => {
             <div className="flex gap-5 font-bold my-8">
               <h2>Tag</h2>
               {
-                tags.map((tag, idx) => <p
+                tags?.map((tag, idx) => <p
                   key={idx}
                   className="text-green-400"
                 >#{tag}</p>)

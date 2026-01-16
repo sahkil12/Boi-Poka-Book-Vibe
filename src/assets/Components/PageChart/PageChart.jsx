@@ -80,7 +80,7 @@ const PageChart = () => {
                 shape={<TriangleBar />}
                 label={{ position: "top", fontSize: 12 }}
               >
-                {allData.map((_, index) => (
+                {allData?.map((_, index) => (
                   <Cell key={index} fill={colors[index % colors.length]} />
                 ))}
               </Bar>
